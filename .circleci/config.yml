@@ -21,6 +21,11 @@ jobs:
     steps:
       - checkout:
           path: ~/project/
+      - run:
+           name: Login Railway CLI
+           command: |
+                echo $RAILWAY_TOKEN | railway login --ci
+
       - node/install:
           node-version: '20.9'
       - run: node --version 
@@ -28,6 +33,7 @@ jobs:
       - run:
           name: Deploy to Railway App
           command: |
+
             cd bankchurn-api
             railway up --service=pacific-clarity
             railway up --detach
