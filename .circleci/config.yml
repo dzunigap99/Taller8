@@ -30,7 +30,7 @@ jobs:
           command: |
 
             cd bankchurn-api
-            echo $RAILWAY_TOKEN | railway login --ci
+            RAILWAY_TOKEN=$RAILWAY_TOKEN
             railway up --service=pacific-clarity
             railway up --detach
 
