@@ -31,7 +31,7 @@ jobs:
 
             cd bankchurn-api
             RAILWAY_TOKEN=$RAILWAY_TOKEN
-            railway up --service=pacific-clarity
+            railway up --service=believable-dream
             railway up --detach
 
 
